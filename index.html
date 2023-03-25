@@ -1,0 +1,140 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="index.css" rel="stylesheet" type="text/css">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.12.0/js/md5.min.js'>
+        </script>
+        <script src="https://kit.fontawesome.com/043bb91fd0.js" crossorigin="anonymous">
+        </script>
+    </head>
+    <body>
+       <div id="material">
+            <div id="upper">
+                <div id="input">
+                    <input type="text" id="name" placeholder="search..." autocomplete="off">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <div id="search-list">
+                    </div>
+                </div>
+            </div>
+            <div id="bottom">
+                <div id="left">
+                    <div id="left-cover">
+                        <div id="poster-head">
+                            Biggest Movie
+                        </div>
+                        <div id="poster">
+                        </div>
+                        <div id="poster-name">
+                            Avengers:Endgame
+                        </div>
+                        <div id="budget">
+                            Budget:$400 mn
+                        </div>
+                        <div id="earnings">
+                            Earning:$2.8 bn
+                        </div>
+                        <div id="story">
+                            <div id="story-head">
+                                Story
+                            </div>
+                            <div id="line">
+                                
+                            </div>
+                            <div id="story-desc">
+                                After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter who they face...
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div id="middle">
+                    <div id="middle-cover">
+                        <div id="marvel">
+                            MARVEL
+                        </div>
+                        <div id="char-head">
+                            Characters
+                        </div>
+                        <div id="list">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="right-head">
+                        Cast & Crew
+                    </div>
+                    <div id="right-list">
+                        <div class="righter-item">
+                            <div class="left-portion" id="one">
+
+                            </div>
+                            <div class="right-portion">
+                                <div class="actor-name">Robert Downey</div>
+                                <div class="char-name">as Tony stark</div>
+                            </div>
+                        </div>
+                        <div class="righter-item">
+                            <div class="left-portion" id="two">
+
+                            </div>
+                            <div class="right-portion">
+                                <div class="actor-name">Chris Evans</div>
+                                <div class="char-name">as Capt. America</div>
+                            </div>
+                        </div>
+                        <div class="righter-item">
+                            <div class="left-portion" id="three">
+
+                            </div>
+                            <div class="right-portion">
+                                <div class="actor-name">Stan Lee</div>
+                                <div class="char-name">Writer</div>
+                            </div>
+                        </div>
+                        <div class="righter-item">
+                            <div class="left-portion" id="fourth">
+
+                            </div>
+                            <div class="right-portion">
+                                <div class="actor-name">Natasha Romanoff</div>
+                                <div class="char-name">as Black Widow</div>
+                            </div>
+                        </div>
+                        <div class="righter-item">
+                            <div class="left-portion" id="fifth">
+
+                            </div>
+                            <div class="right-portion">
+                                <div class="actor-name">Anthony Russo</div>
+                                <div class="char-name">Director</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       </div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            if (!localStorage.getItem("first-run")) {
+                localStorage.setItem("first-run", true);
+                localStorage.fav=JSON.stringify([]);
+            } 
+        });
+        function abc(fav){
+            //e.preventDefault();
+            // var name=document.getElementById('name');
+            localStorage.fav = JSON.stringify(fav);
+            console.log('ls', JSON.parse(localStorage.fav));
+        }
+       
+    </script>
+    <script src="heart.js"></script>
+
+    <script src="index.js">
+    </script>
+</html>
