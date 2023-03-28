@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    background-image: url('https://wallpaperset.com/w/full/4/6/7/96482.jpg');
+    background-size: cover;
+    display: flex;
+}
+#material{
+    position: relative;
+    top:20px;
+    height:130vh;
+    width:60%;
+    background-color: rgb(233, 228, 228);
+    margin: auto;
+}
+#upper{
+    height:35%;
+    width: 100%;;
+    background-color: rgb(244, 239, 239);
+    background-image: url('https://rare-gallery.com/mocahbig/1304860-Iron-Man-Captain-America-Ant-Man-Thor-Nebula-Marvel.jpg');
+    background-size: cover;
+    /* background-image: url('https://rare-gallery.com/thumbs/4538292-black-widow-scarlett-johansson-robert-downey-jr.-don-cheadle-the-vision-actor-actress-men-women-captain-america-captain-america-civil-war-movies-iron-man-marvel-comics-superhero-war-machine-shie.jpg'); */
+    background-repeat: no-repeat;
+}
+#middle{
+    text-align: center;
+    font-size: 35px;
+    color: rgb(248, 247, 251);
+    position: relative;
+    font-weight: 500;
+    bottom:30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#lower{
+    height:60%;
+    width:100%;
+    /* background-color: aqua; */
+    display: flex;
+    /* flex-direction: ; */
+}
+#left{
+    height:100%;
+    width:50%;
+    /* background-color: rgb(145, 195, 195); */
+    position: relative;
+}
+#right{
+    height:100%;
+    width:50%;
+    /* background-color: rgb(245, 149, 33); */
+    display: flex;
+    flex-direction: column;
+}
+.fav-top{
+    height:40px;
+    width:100%;
+    display: flex;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#fav-head{
+    font-size: 25px;
+    position: relative;
+    top:16px;
+}
+.fav-top i{
+    position: relative;
+    top:16px;
+    font-size: 30px;
+}
+#fav-list,#all-list{
+    height:92%;
+    width: 100%;
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.item,.itemx{
+    height:150px;
+    width:250px;
+    display: flex;
+    /* background-color: blue; */
+    margin-top: 15px;
+}
+.left-item{
+    height: 100%;
+    width: 100px;
+    /* background-color: rgb(155, 152, 149); */
+}
+.right-item{
+    height: 100%;
+    width: 150px;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.char-name{
+    height:40%;
+    width:100%;
+    /* background-color: red; */
+    text-align: center;
+}
+.char-info{
+    height:20%;
+    width: 100%;
+    /* background-color: bisque; */
+    text-align: center;
+}
+.dil{
+    height:20%;
+    width: 100%;
+    /* background-color: aqua; */
+    text-align: center;
+    /* background-color: red; */
+    color: red;
+    font-size:25px;
+}
+#left .fav-top{
+    font-size: 25px;
+    position: relative;
+    top:8px;
+}
+#fav-below{
+    width: 100%;
+    height:16px;
+    /* background-color: antiquewhite; */
+    position: absolute;
+    top:32px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.itemx{
+    height: 200px;
+    width:280px;
+}
+.lefter{
+    height:100%;
+    width:150px;
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/611/141/228/iron-man-marvel-comics-tony-stark-gaurav-wallpaper-preview.jpg');
+    background-size: cover;
+   
+}
+#one{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/36/558/326/avengers-infinity-war-4k-robert-downey-jr-iron-man-wallpaper-preview.jpg');
+}
+#two{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/168/856/47/captain-america-chris-evans-captain-america-the-first-avenger-wallpaper-preview.jpg');
+}
+#three{
+    background-image: url('thor.jpeg');
+}
+.righter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:130px;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@media (max-width:950px){
+    #material{
+        width:80%;
+    }
+}
+@media(max-width:740px){
+    #material{
+        width:95%;
+    }
+}
+@media(max-width:600px){
+    .item{
+        width:175px;
+        height:140px;
+    }
+    .left-item{
+        width:80px;
+    }
+    .right-item{
+        width:95px;
+    }
+    .char-name{
+        height:60%;
+        font-size:14px ;
+    }
+    .itemx{
+        width:195px;
+        height:180px;
+    }
+    .lefter{
+        width:110px
+    }
+    .righter{
+        width:80px;
+        font-size: 20px;
+    }
+    #fav-head, #left .fav-top{
+        font-size:20px;
+    }
+}
+@media (max-width:600px){
+    #upper{
+        background-image: url('index3.jpeg');
+    }
+}
+@media(max-width:500px){
+    #upper{
+        background-image: url('index3.1.webp');
+    }
+}
+@media(max-width:450px){
+    .itemx{
+        width:175px;
+        height:180px;
+    }
+    .righter{
+        width:60px;
+        font-size: 15px;
+    }
+}

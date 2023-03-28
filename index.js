@@ -156,7 +156,7 @@ async function searchlist(e){
         box.remove();
         });
     //    initiallist();
-    heartt('tttt',0)
+    heartt('search',0)
         return;
     }
     const url=`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${name.value}&limit=3`

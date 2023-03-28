@@ -16,9 +16,15 @@ const priv='6631b0448af8d6b136886c3d869c35b9906171ce';
 //6631b0448af8d6b136886c3d869c35b9906171ce
 var hash = md5(ts+priv+pub).toString();
 var char=-1;
-var series=-1;
-var comics=-1;
-var stories=-1;
+// var series=[];
+// var comics=[];
+// var stories=[];
+var totalstories=-1;
+var totalseries=-1;
+var totalcomics=-1;
+var comicslength=-1;
+var storieslength=-1;
+var serieslength=-1;
 async function singlechar(){
    // console.log('')
     const url=`http://gateway.marvel.com/v1/public/characters/${charid}?ts=${ts}&apikey=${pub}&hash=${hash}`
@@ -27,6 +33,28 @@ async function singlechar(){
     info.then((data)=>{
         // console.log('indiv',data);
         char=data.data.results[0];
+        console.log(char);
+        totalcomics=char.comics.available;
+        if(totalcomics<30){
+            comicslength=totalcomics;
+        }
+        else{
+            comicslength=30;
+        }
+        totalstories=char.stories.available;
+        if(totalstories<30){
+            storieslength=totalstories;
+        }
+        else{
+            storieslength=30;
+        }
+        totalseries=char.series.available;
+        if(totalseries<30){
+            serieslength=totalseries;
+        }
+        else{
+            serieslength=30;
+        }
         //console.log('char',char)
         var imgpath=char.thumbnail.path+'/standard_large.jpg'
         var pic=document.getElementById('char-pic');
@@ -43,15 +71,49 @@ async function singlechar(){
 
 }
 singlechar()
-async function charseries(){
-    //console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/series?ts=${ts}&apikey=${pub}&hash=${hash}&limit=3`
+
+
+
+
+
+
+
+
+
+
+
+
+var left=document.getElementById('series-left');
+left.style.visibility='hidden';
+var right=document.getElementById('series-right');
+right.style.visibility='hidden';
+async function charseries(start,end){
+    var series=[];
+    const boxes = document.querySelectorAll('.series-item');
+    boxes.forEach(box => {
+    box.remove();
+    });
+    if(end==-1){
+        return;
+    }
+    var left=document.getElementById('series-left');
+    left.style.visibility='visible';
+    var right=document.getElementById('series-right');
+    right.style.visibility='visible';
+    if(start==0){//ok
+        left.style.visibility='hidden';
+    }//ok
+    if(end==serieslength-1){//ok
+        right.style.visibility='hidden';
+    }
+    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/series?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
-        // console.log('indiv',data);
-        series=data.data.results;
-        //console.log('series',series)
+        var seriesa=data.data.results;
+        for(let i=start;i<=end;i++){
+            series.push(seriesa[i]);
+        }//ok
         var seriesimgpaths=[];
         var seriestitles=[];
         var length=0;
@@ -81,15 +143,79 @@ async function charseries(){
         }
     })
 }
-charseries()
-async function charcomics(){
+var gstartseries=-1;
+var gendseries=-1;
+setTimeout(function(){
+    console.log('kk',serieslength)
+    if(serieslength>3){
+        console.log('kkkk')
+        charseries(0,2);
+        gstartseries=0;
+        gendseries=2;
+    }
+    else{
+        charseries(0,serieslength-1);
+    }
+},600)
+function leftarrowseries(){
+    console.log('leftftftftfttftf')
+    gendseries=gstartseries-1;//ok
+    gstartseries=gstartseries-3;//ok
+    charseries(gstartseries,gendseries);
+}
+function rightarrowseries(){
+    console.log('righttttttt')
+    if(gendseries+3>serieslength-1){
+        gendseries=serieslength-1;
+    }
+    else{
+        gendseries=gendseries+3;
+    }
+    gstartseries=gstartseries+3;
+    charseries(gstartseries,gendseries);
+}
+
+
+
+
+
+
+
+
+
+var left=document.getElementById('comics-left');
+left.style.visibility='hidden';
+var right=document.getElementById('comics-right');
+right.style.visibility='hidden';
+async function charcomics(start,end){
+    var comics=[];
+    const boxes = document.querySelectorAll('.comics-item');
+    boxes.forEach(box => {
+    box.remove();
+    });
+    if(end==-1){
+        return;
+    }
+    var left=document.getElementById('comics-left');
+    left.style.visibility='visible';
+    var right=document.getElementById('comics-right');
+    right.style.visibility='visible';
+    if(start==0){//ok
+        left.style.visibility='hidden';
+    }//ok
+    if(end==comicslength-1){
+        right.style.visibility='hidden';
+    }
    // console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=3`
+    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=50`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
         // console.log('indiv',data);
-        comics=data.data.results;
+        var comicsa=data.data.results;
+        for(let i=start;i<=end;i++){
+            comics.push(comicsa[i]);
+        }
         //console.log('comics',comics)
         var comicsimgpaths=[];
         var comicstitles=[];
@@ -120,31 +246,95 @@ async function charcomics(){
         }
     })
 }
-charcomics();
-var c=[]
+var gstartcomics=-1;
+var gendcomics=-1;
+setTimeout(function(){
+    console.log('kk',comicslength)
+    if(comicslength>3){
+        console.log('kkkk')
+        charcomics(0,2);
+        gstartcomics=0;
+        gendcomics=2;
+    }
+    else{
+        charcomics(0,comicslength-1);
+    }
+},600)
+function leftarrowcomics(){
+    console.log('leftftftftfttftf')
+    gendcomics=gstartcomics-1;//ok
+    gstartcomics=gstartcomics-3;//ok
+    charcomics(gstartcomics,gendcomics);
+}
+function rightarrowcomics(){
+    console.log('righttttttt')
+    if(gendcomics+3>comicslength-1){
+        gendcomics=comicslength-1;
+    }
+    else{
+        gendcomics=gendcomics+3;
+    }
+    gstartcomics=gstartcomics+3;
+    charcomics(gstartcomics,gendcomics);
+}
+
+
+
+
+
+
+
+
+
+
+
+var c=[]//ok
 function helper(a){
     //console.log('aaa',a);
-    c.push(a);
+    c.push(a);//ok
     //console.log('c',c)
 }
-async function getimage(storyid){
-    const url=`http://gateway.marvel.com/v1/public/stories/${storyid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=3`
+async function getimage(storyid){//ok
+    const url=`http://gateway.marvel.com/v1/public/stories/${storyid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=1`
     const response=await fetch(url);
-    var info=response.json();
+    var info=response.json();//okkkk
     info.then((data)=>{
        //console.log('story ki comics',data.data.results[0].thumbnail.path)
-        helper(data.data.results[0].thumbnail.path);
+        helper(data.data.results[0].thumbnail.path);//ok
     })
-}
-async function charstories(){
-   // console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/stories?ts=${ts}&apikey=${pub}&hash=${hash}&limit=3`
+}//okkkkkkkk
+var left=document.getElementById('stories-left');
+left.style.visibility='hidden';
+var right=document.getElementById('stories-right');
+right.style.visibility='hidden';
+async function charstories(start,end){
+    c=[];
+    var stories=[];
+    const boxes = document.querySelectorAll('.stories-item');
+    boxes.forEach(box => {
+    box.remove();
+    });
+    if(end==-1){
+        return;
+    }
+    var left=document.getElementById('stories-left');
+    left.style.visibility='visible';
+    var right=document.getElementById('stories-right');
+    right.style.visibility='visible';
+    if(start==0){//ok
+        left.style.visibility='hidden';
+    }//ok
+    if(end==storieslength-1){//ok
+        right.style.visibility='hidden';
+    }
+    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/stories?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
-        // console.log('indiv',data);
-        stories=data.data.results;
-        //console.log('stories',stories)
+        var storiesa=data.data.results;
+        for(let i=start;i<=end;i++){
+            stories.push(storiesa[i]);
+        }//ok
         var storiesimgpaths=[];
         var storiestitles=[];
         var length=0;
@@ -186,4 +376,35 @@ async function charstories(){
         },1000)
     })
 }
-charstories();
+var gstartstories=-1;
+var gendstories=-1;
+setTimeout(function(){
+    console.log('kk',storieslength)
+    if(storieslength>3){
+        console.log('kkkk')
+        charstories(0,2);
+        gstartstories=0;
+        gendstories=2;
+    }
+    else{
+        charstories(0,storieslength-1);
+    }
+},600)
+function leftarrowstories(){
+    console.log('leftftftftfttftf')
+    gendstories=gstartstories-1;//ok
+    gstartstories=gstartstories-3;//ok
+    charstories(gstartstories,gendstories);
+}
+function rightarrowstories(){
+    console.log('righttttttt')
+    if(gendstories+3>storieslength-1){
+        gendstories=storieslength-1;
+    }
+    else{
+        gendstories=gendstories+3;
+    }
+    gstartstories=gstartstories+3;
+    charstories(gstartstories,gendstories);
+}//ok
+//done

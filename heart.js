@@ -6,7 +6,7 @@ async function heartt(str,len){
     if(str=='init'){
         //ok
     }
-    else{
+    if(str=='search'){
         var iconer=[];
         for(var f=0;f<len;f++){
             iconer.push(icon[f]);
