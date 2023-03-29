@@ -33,7 +33,7 @@ async function singlechar(){
     info.then((data)=>{
         // console.log('indiv',data);
         char=data.data.results[0];
-        console.log(char);
+        console.log('char',char);
         totalcomics=char.comics.available;
         if(totalcomics<30){
             comicslength=totalcomics;
@@ -156,7 +156,7 @@ setTimeout(function(){
     else{
         charseries(0,serieslength-1);
     }
-},600)
+},800)
 function leftarrowseries(){
     console.log('leftftftftfttftf')
     gendseries=gstartseries-1;//ok
@@ -259,7 +259,7 @@ setTimeout(function(){
     else{
         charcomics(0,comicslength-1);
     }
-},600)
+},1000)
 function leftarrowcomics(){
     console.log('leftftftftfttftf')
     gendcomics=gstartcomics-1;//ok
@@ -373,7 +373,7 @@ async function charstories(start,end){
             title[i].innerHTML=`${storiestitles[i]}`;
         }
          
-        },1000)
+        },2000)
     })
 }
 var gstartstories=-1;

@@ -1,3 +1,4 @@
+
 const currentDate = new Date(); 
 const ts = currentDate. getTime(); 
 const public='8de8808be04038428a605f87e6285901';
@@ -102,7 +103,7 @@ async function initiallist(){
     // console.log('1111322323',intel[4])
     for(obj of intel){
         name.push(obj.name.split('/')[0]);
-        imgpath.push(obj.thumbnail.path+'/portrait_medium.jpg');
+        imgpath.push(obj.thumbnail.path+'/standard_medium.jpg');
         charid.push(obj.id);
         // console.log('charid',charid);
         list=document.getElementById('list');

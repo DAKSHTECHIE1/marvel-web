@@ -8,7 +8,7 @@ body{
     position: relative;
     top:20px;
     height:180vh;
-    width:80%;
+    width:85%;
     background-color: rgb(31, 30, 30);
     margin: auto;
     /* border-radius:  */
@@ -17,7 +17,10 @@ body{
     height:25%;
     /* background-color: red; */
     background-image: url('marvel-studios\ copy\ 2.jpg');
+    /* background-image: url('https://cdn.marvel.com/content/1x/_studios_card_0.jpg'); */
+    /* background-image: url('MS3.jpg'); */
     background-size: cover;
+    /* already covered */
     background-repeat: no-repeat;
 }
 #middle{
@@ -91,6 +94,7 @@ body{
     height:200px;    
     width:100%;
     /* background-color: rgb(203, 196, 255); */
+    background-size: cover;
 }
 .title{
     height:50px;
@@ -119,12 +123,83 @@ body{
     }
 }
 @media (max-width:680px){
-
+    .item{
+        height:210px;
+    }
+    .image{
+        height: 160px;
+    }
+    #lower{
+        height: 65%;
+    }
+    #material{
+        height:160vh;
+    }
 }
-
-
-
-
+@media(max-width:550px){
+    #material{
+        width: 100%;
+    }
+    .head{
+        font-size: 20px;
+    }
+    #comics,#stories,#series{
+        width:32%;
+    }
+    .item{
+        width:220px;
+    }
+}
+@media (max-width:485px){
+    .item{
+        height:170px;
+        margin-top: 25px;
+    }
+    .image{
+        height: 135px;
+    }
+    .title{
+        height: 45px;
+        font-size: 14px;
+    }
+}
+@media (max-width:410px){
+    .item{
+        height:155px;
+    }
+    .image{
+        height: 120px;
+    }
+    .title{
+        height: 35px;
+        font-size: 11px;
+    }
+}
+@media (max-width:1290px){
+    #upper{
+        background-image: url('MS1\ .jpg');
+    }
+}
+@media (max-width:1080px){
+    #upper{
+        background-image: url('MS4.jpg');
+    }
+}
+@media (max-width:900px){
+    #upper{
+        background-image: url('https://cdn.wallpapersafari.com/17/65/bmwjZ6.jpg');
+    }
+}
+@media (max-width:480px){
+    #upper{
+        background-image: url('aven.jpeg');
+    }
+}
+@media (max-width:400px){
+    #upper{
+        background-image: url('https://w0.peakpx.com/wallpaper/115/332/HD-wallpaper-avengers-logo-avenger-logo.jpg');
+    }
+}
 
 
 
