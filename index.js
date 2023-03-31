@@ -84,7 +84,7 @@ var initialid=[1017104,1017107,1017105,1017109];
 async function initiallist(){
     var arr=['Iron Man','Hulk','Captain America/Steve Rogers (MAA)','Black Widow']
     for(var i=0;i<5;i++){
-        const url=`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${arr[i]}`
+        const url=`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${arr[i]}`
         const response=await fetch(url);
         var info=response.json();
         info.then((data)=>{
@@ -120,7 +120,7 @@ async function initiallist(){
             }
             else
             {
-                window.location.href=`http://localhost:5501/index2.html?hello=${event.target.id}`;
+                window.location.href=`https://localhost:5501/index2.html?hello=${event.target.id}`;
             }
         })
         item.innerHTML=`    
@@ -174,7 +174,7 @@ async function searchlist(e){
     heartt('search',0)
         return;
     }
-    const url=`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${name.value}&limit=3`
+    const url=`https://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${name.value}&limit=3`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
@@ -201,7 +201,7 @@ async function searchlist(e){
                     event.stopPropagation();
                     return;
                 }
-                window.location.href=`http://localhost:5501/index2.html?hello=${event.target.id}`;
+                window.location.href=`https://localhost:5501/index2.html?hello=${event.target.id}`;
                
             })
             item.innerHTML=`
@@ -244,7 +244,7 @@ async function searchlist(e){
 }
 async function single(){
     console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/1009664?ts=${ts}&apikey=${public}&hash=${hash}`
+    const url=`https://gateway.marvel.com/v1/public/characters/1009664?ts=${ts}&apikey=${public}&hash=${hash}`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
