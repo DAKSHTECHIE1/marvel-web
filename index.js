@@ -109,13 +109,14 @@ async function initiallist(){
         list=document.getElementById('list');
         var item=document.createElement('div')
         item.setAttribute('class','item');
-        item.innerHTML=`
-                            <div class='left-item'>
-                            </div>
-                            <div class='right-item'>
-                                <div class='item-head'> </div>
-                                <div class='item-desc'></div>
-                            </div>
+        item.innerHTML=`    
+                                <div class='left-item'>
+                                </div>
+                                <div class='right-item'>
+                                    <div class='item-head'> </div>
+                                    <div class='item-desc'></div>
+                                </div>
+                        
                         `
         list.append(item);
     }

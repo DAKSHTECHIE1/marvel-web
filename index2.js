@@ -156,7 +156,7 @@ setTimeout(function(){
     else{
         charseries(0,serieslength-1);
     }
-},800)
+},600)
 function leftarrowseries(){
     console.log('leftftftftfttftf')
     gendseries=gstartseries-1;//ok
@@ -259,7 +259,7 @@ setTimeout(function(){
     else{
         charcomics(0,comicslength-1);
     }
-},1000)
+},600)
 function leftarrowcomics(){
     console.log('leftftftftfttftf')
     gendcomics=gstartcomics-1;//ok
@@ -344,9 +344,9 @@ async function charstories(start,end){
             console.log('storyid',storyid)
             getimage(storyid)
             //console.log('ccccccc',c)
-            setTimeout(function(){
-                //console.log('c',c)
-            },1000)
+            // setTimeout(function(){
+            //     //console.log('c',c)
+            // },1000)
         }
         setTimeout(function(){
              //console.log('iii',storiestitles)
@@ -373,7 +373,7 @@ async function charstories(start,end){
             title[i].innerHTML=`${storiestitles[i]}`;
         }
          
-        },2000)
+        },600)
     })
 }
 var gstartstories=-1;

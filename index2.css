@@ -200,7 +200,43 @@ body{
         background-image: url('https://w0.peakpx.com/wallpaper/115/332/HD-wallpaper-avengers-logo-avenger-logo.jpg');
     }
 }
-
+/* samsung a51, S20,iphone12 pro*/
+@media(min-height:750px){
+    #material{
+        height:130vh;
+    }
+}
+/* @media (min-height:1000px){
+    #material{
+        height:130vh
+    }
+} */
+/* ipad air */
+@media(min-height:1100px){
+    #upper{
+        height:20%;
+    }
+    #material{
+        height:120vh;
+    }
+}
+/* surface pro  */
+@media(min-height:1200px){
+    #material{
+        height:100vh;
+    }
+}
+@media(min-width:1200px){
+    #material{
+        height:180vh;
+    }
+}
+/* nest hub */
+@media(min-width:1010px) and (max-width:1026px) and (min-height:590px) and (max-height:602px){
+    #material{
+        height:220vh;
+    }
+}
 
 
 

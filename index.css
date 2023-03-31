@@ -20,13 +20,24 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
 }
+#fav-link{
+    font-size:22px;
+    color: aliceblue;
+    position: absolute;
+    left:2vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color:aliceblue;
+}
 #input{
     height:150px;
     width:170px;
     /* background-color: aqua; */
     position: absolute;
     top:10px;
-    right:130px;
+    right:3vw;
     /* background-color: blue; */
     /* display: flex; */
 }
@@ -347,7 +358,7 @@ input{
 .right-item i{
     position: absolute;
     top: 4px;
-    right:2px;
+    right:-25px;
     font-size: 20px;
 }
 .heart{
@@ -361,6 +372,12 @@ input{
 }
 .item:hover{
     background-color: lightblue;
+}
+@media(max-width:1200px){
+    #upper{
+        background: url('https://wallpaperaccess.com/full/85019.jpg');
+        background-size: cover;
+    }
 }
 @media(max-width:1150px){
     #poster{
@@ -376,8 +393,11 @@ input{
     #material{
         width:95%;
     }
+    .right-item i{
+        right:-10px;
+    }
 }
-@media(max-width:850px){
+@media (max-width:850px),(min-height:1000px){
     .righter-item{
         align-items: center;
         width:120px;
@@ -403,10 +423,22 @@ input{
     #left{
         width:32%;
     }
+    .right-item i{
+        right:0px;
+    }
+}
+@media (max-width:720px){
+    #upper{
+        background: url('./av.jpeg');
+        background-size: cover;
+    }
 }
 @media(max-width:700px){
+    #upper{
+        height:30%;
+    }
     #material{
-        height:180%;
+        height:192%;
     }
     #bottom{
         justify-content: space-between;
@@ -445,12 +477,21 @@ input{
         width:25%;
     }
     #poster{
-        height: 30%;
+        height: 25%;
         border-radius: 0;
         background-image: url('poster3.jpeg');
     }
 }
-@media(max-width:545px){
+@media(max-width:600px){
+    #marvel{
+        font-size:30px;
+    }
+    #char-head{
+        font-size:25px;
+    }
+    #right-head{
+        font-size:25px;
+    }
     #material{
         width:100%;
     }
@@ -467,13 +508,35 @@ input{
         font-size: 14px;
     }
 }
+@media(max-width:575px){
+    #upper{
+        background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20150513165022-avengers-superheroes.jpeg?crop=1:1');
+    }
+}
 @media(max-width:512px){
     #poster{
-        background-image:url('poster4.jpeg');
+        background-image:url('poster5.jpeg');
+        /* background-image: url('https://wallpapercave.com/wp/wp5323628.jpg'); */
+    }
+    .item-head{
+        font-size:20px;
+        position: relative;
+        top:7px;
+        right:10px;
+    }
+    .item-head .heart{
+        position:absolute;
+        top:1px;
+        right: -10px;
     }
 }
 @media(max-width:450px){
+    #upper{
+        background-image: url('https://wallpapercave.com/dwp2x/wp4881799.jpg');
+    }
     #right{
+        position: relative;
+        top:5px;
         width:20%;
     }
     .righter-item{
@@ -504,17 +567,56 @@ input{
         height: 25%;
     }
 }
-@media (max-width:380px){
-    #middle{
-        /* width:55%; */
-        height:1200px;
-        /* position: relative; */
+@media (max-width:430px){
+    #poster{
+        height:20%;
     }
-    #material{
-        height:200%;
+    .actor-name{
+        font-size: 10px;
     }
 }
-
+@media (max-width:390px){
+    .item-head{
+        font-size:16px;
+    }
+    .item-desc{
+        font-size: 12px;
+    }
+    #middle{
+        width:45%;
+        height:1100px;
+        /* position: relative; */
+    }
+    #right{
+        width:22%;
+    }
+    #poster-name,#budget,#earnings{
+        font-size:13px;
+    }
+}
+@media(min-height:800px){
+    #material{
+        height:155%;
+    }
+}
+@media(min-height:1000px){
+    #material{
+        height:90%;
+    }
+    #middle{
+        position: relative;
+        left:20px;
+    }
+}
+@media(min-height:1050px){
+    #material{
+        height:83%;
+    }
+    #middle{
+        position: relative;
+        left:25px;
+    }
+}
 
 
 
