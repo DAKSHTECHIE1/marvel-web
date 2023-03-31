@@ -27,7 +27,7 @@ var storieslength=-1;
 var serieslength=-1;
 async function singlechar(){
    // console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}?ts=${ts}&apikey=${pub}&hash=${hash}`
+    const url=`https://gateway.marvel.com/v1/public/characters/${charid}?ts=${ts}&apikey=${pub}&hash=${hash}`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
@@ -106,7 +106,7 @@ async function charseries(start,end){
     if(end==serieslength-1){//ok
         right.style.visibility='hidden';
     }
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/series?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
+    const url=`https://gateway.marvel.com/v1/public/characters/${charid}/series?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
@@ -207,7 +207,7 @@ async function charcomics(start,end){
         right.style.visibility='hidden';
     }
    // console.log('')
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=50`
+    const url=`https://gateway.marvel.com/v1/public/characters/${charid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=50`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{
@@ -295,7 +295,7 @@ function helper(a){
     //console.log('c',c)
 }
 async function getimage(storyid){//ok
-    const url=`http://gateway.marvel.com/v1/public/stories/${storyid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=1`
+    const url=`https://gateway.marvel.com/v1/public/stories/${storyid}/comics?ts=${ts}&apikey=${pub}&hash=${hash}&limit=1`
     const response=await fetch(url);
     var info=response.json();//okkkk
     info.then((data)=>{
@@ -327,7 +327,7 @@ async function charstories(start,end){
     if(end==storieslength-1){//ok
         right.style.visibility='hidden';
     }
-    const url=`http://gateway.marvel.com/v1/public/characters/${charid}/stories?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
+    const url=`https://gateway.marvel.com/v1/public/characters/${charid}/stories?ts=${ts}&apikey=${pub}&hash=${hash}&limit=30`
     const response=await fetch(url);
     var info=response.json();
     info.then((data)=>{

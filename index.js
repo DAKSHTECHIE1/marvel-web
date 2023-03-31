@@ -120,7 +120,7 @@ async function initiallist(){
             }
             else
             {
-                window.location.href=`https://localhost:5501/index2.html?hello=${event.target.id}`;
+                window.location.href=`./index2.html?hello=${event.target.id}`;
             }
         })
         item.innerHTML=`    
@@ -201,7 +201,7 @@ async function searchlist(e){
                     event.stopPropagation();
                     return;
                 }
-                window.location.href=`https://localhost:5501/index2.html?hello=${event.target.id}`;
+                window.location.href=`./index2.html?hello=${event.target.id}`;
                
             })
             item.innerHTML=`

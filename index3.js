@@ -36,7 +36,7 @@ async function favlist(start,end){
         right.style.visibility='hidden';
     }
    for(var i=start;i<=end;i++){
-        const url=`http://gateway.marvel.com/v1/public/characters/${parseInt(fav[i])}?ts=${ts}&apikey=${pub}&hash=${hash}`
+        const url=`https://gateway.marvel.com/v1/public/characters/${parseInt(fav[i])}?ts=${ts}&apikey=${pub}&hash=${hash}`
         const response=await fetch(url);
         var info=response.json();
         info.then((data)=>{
