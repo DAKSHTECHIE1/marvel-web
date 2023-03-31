@@ -25,11 +25,13 @@ body{
     color: aliceblue;
     position: absolute;
     left:2vw;
+    top:1vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 a{
     text-decoration: none;
-    color:aliceblue;
+    color:rgb(53, 148, 232);
+    font-weight:700;
 }
 #input{
     height:150px;
@@ -617,7 +619,12 @@ input{
         left:25px;
     }
 }
-
+@media(max-height:900px){
+    #right{
+        position: relative;
+        bottom:40px;
+    }
+}
 
 
 

@@ -23,6 +23,23 @@ body{
     /* already covered */
     background-repeat: no-repeat;
 }
+#fav-link,#home{
+    font-size:22px;
+    color: aliceblue;
+    position: absolute;
+    left:2vw;
+    top:1vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color:rgb(10, 10, 10);
+    font-weight:700;
+}
+#home{
+    position: absolute;
+    left:70px;
+}
 #middle{
     height:180px;
     width:100%;

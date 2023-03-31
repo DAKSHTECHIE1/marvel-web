@@ -82,7 +82,7 @@ var initialid=[1017104,1017107,1017105,1017109];
 //     }
 // }
 async function initiallist(){
-    var arr=['Iron Man/Tony Stark (MAA)','Hulk/Bruce Banner (MAA)','Captain America/Steve Rogers (MAA)','Black Widow/Natasha Romanoff (MAA)','Thor']
+    var arr=['Iron Man','Hulk','Captain America/Steve Rogers (MAA)','Black Widow']
     for(var i=0;i<5;i++){
         const url=`http://gateway.marvel.com/v1/public/characters?ts=${ts}&apikey=${public}&hash=${hash}&nameStartsWith=${arr[i]}`
         const response=await fetch(url);
@@ -109,14 +109,27 @@ async function initiallist(){
         list=document.getElementById('list');
         var item=document.createElement('div')
         item.setAttribute('class','item');
+        item.setAttribute('id',`${obj.id}`)
+        item.addEventListener('click',function(event){
+            console.log('data-lol',event.target.dataset.lol)
+            console.log('idddd',event.target);
+            if(event.target.dataset.lol=='init'){
+                console.log('111111111111111111111')
+                event.stopPropagation();
+                return;
+            }
+            else
+            {
+                window.location.href=`http://localhost:5501/index2.html?hello=${event.target.id}`;
+            }
+        })
         item.innerHTML=`    
-                                <div class='left-item'>
+                                <div class='left-item' id=${obj.id}>
                                 </div>
-                                <div class='right-item'>
-                                    <div class='item-head'> </div>
-                                    <div class='item-desc'></div>
+                                <div class='right-item' id=${obj.id}>
+                                    <div class='item-head' id=${obj.id} > </div>
+                                    <div class='item-desc' id=${obj.id}></div>
                                 </div>
-                        
                         `
         list.append(item);
     }
@@ -181,12 +194,23 @@ async function searchlist(e){
             list=document.getElementById('search-list');
             var item=document.createElement('div')
             item.setAttribute('class','search-item');
+            item.setAttribute('id',`{obj.id}`)
+            item.addEventListener('click',function(event){
+                console.log('idddd',event.target);
+                if(event.target.dataset.lol=='search'){
+                    event.stopPropagation();
+                    return;
+                }
+                window.location.href=`http://localhost:5501/index2.html?hello=${event.target.id}`;
+               
+            })
             item.innerHTML=`
-                                <div class="left-search"></div>      
-                                <div class="right-search">
-                                    <div class="naam">
-                                   </div>
-                                    <div class='chitra'></div>
+                                <div class="left-search" id=${obj.id}></div>      
+                                <div class="right-search" id=${obj.id}>
+                                    <div class="naam" id=${obj.id}>
+                                    </div>
+                                    <div class='chitra' id=${obj.id}>
+                                    </div>
                                 </div>     
             
                             `

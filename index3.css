@@ -21,6 +21,19 @@ body{
     /* background-image: url('https://rare-gallery.com/thumbs/4538292-black-widow-scarlett-johansson-robert-downey-jr.-don-cheadle-the-vision-actor-actress-men-women-captain-america-captain-america-civil-war-movies-iron-man-marvel-comics-superhero-war-machine-shie.jpg'); */
     background-repeat: no-repeat;
 }
+#home{
+    font-size:22px;
+    color: rgb(12, 12, 12);
+    position: absolute;
+    left:2vw;
+    top:1vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color:rgb(237, 96, 96);
+    font-weight:700;
+}
 #middle{
     text-align: center;
     font-size: 35px;

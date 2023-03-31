@@ -1,7 +1,7 @@
-// const urlParams = new URLSearchParams(window.location.search);
-// const a=urlParams.get('hello');
-// console.log('2x',a);
-var charid=1009368;
+const urlParams = new URLSearchParams(window.location.search);
+const a=urlParams.get('hello');
+console.log('2x',a);
+var charid=a;
 //console.log('fav index2',JSON.parse(localStorage.fav));
 var fav=JSON.parse(localStorage.fav);
 var index=fav.indexOf(charid.toString());
