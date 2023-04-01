@@ -108,6 +108,8 @@ input{
     height: 70%;
     position: relative;
     display: flex;
+    /* nhi hai ye github vle pe */
+    justify-content: space-between; 
 }
 #left{
     /* background-color: plum; */
@@ -144,8 +146,8 @@ input{
     /* background-color: rgb(61, 172, 85); */
     height: 105%;
     width:25%;
-    position:absolute;
-    right:0px;
+    /* position: absolute;
+    right: 0px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -319,7 +321,8 @@ input{
     /* background-color: rgb(243, 159, 50); */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    /* align-items:space-between; */
 }
 .item{
     /* position: relative; */
@@ -438,9 +441,6 @@ input{
 @media(max-width:700px){
     #upper{
         height:30%;
-    }
-    #material{
-        height:192%;
     }
     #bottom{
         justify-content: space-between;
@@ -596,35 +596,65 @@ input{
         font-size:13px;
     }
 }
-@media(min-height:800px){
+/* phones */
+@media(min-height:500px) and (max-width:700px){
+    #material{
+        height:220%;
+    }
+}
+
+@media(min-height:600px) and (max-width:700px){
+    #material{
+        height:205%;
+    }
+}
+
+@media(min-height:800px) and (max-width:700px){
     #material{
         height:155%;
     }
 }
-@media(min-height:1000px){
+@media(min-height:950px) and (max-width:700px){
     #material{
-        height:90%;
-    }
-    #middle{
-        position: relative;
-        left:20px;
+        height:130%;
     }
 }
-@media(min-height:1050px){
+@media(max-height:1400px) and (min-width:700px){
     #material{
-        height:83%;
-    }
-    #middle{
-        position: relative;
-        left:25px;
+        height:95%;
     }
 }
-@media(max-height:900px){
-    #right{
-        position: relative;
-        bottom:40px;
+@media(max-height:1200px) and (min-width:700px){
+    #material{
+        height:115%;
     }
 }
+@media(max-height:1000px) and (min-width:700px){
+    #material{
+        height:135%;
+    }
+}
+@media(max-height:800px) and (min-width:700px){
+    #material{
+        height:155%;
+    }
+}
+@media(max-height:700px) and (min-width:700px){
+    #material{
+        height:165%;
+    }
+}
+@media(max-height:500px) and (min-width:700px){
+    #material{
+        height:185%;
+    }
+}
+
+
+
+
+
+
 
 
 
