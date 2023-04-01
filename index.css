@@ -514,6 +514,11 @@ input{
     #upper{
         background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20150513165022-avengers-superheroes.jpeg?crop=1:1');
     }
+    #marvel,#char-head,#poster-head,#right-head{
+        /* color:rgb(53, 148, 232);
+         */
+         color:white;
+    }
 }
 @media(max-width:512px){
     #poster{
@@ -530,6 +535,15 @@ input{
         position:absolute;
         top:1px;
         right: -10px;
+    }
+    #marvel{
+        font-size:25px;
+    }
+    #char-head,#right-head{
+        font-size:20px;
+    }
+    #poster-head{
+        font-size:20px;
     }
 }
 @media(max-width:450px){
@@ -568,6 +582,7 @@ input{
     #poster{
         height: 25%;
     }
+
 }
 @media (max-width:430px){
     #poster{
@@ -594,6 +609,11 @@ input{
     }
     #poster-name,#budget,#earnings{
         font-size:13px;
+    }
+}
+@media (max-width:370px){
+    #poster-head{
+        font-size:18px;
     }
 }
 /* phones */
