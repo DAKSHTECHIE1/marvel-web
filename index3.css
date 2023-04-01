@@ -202,6 +202,9 @@ a{
     #upper{
         background-image: url('index3.1.webp');
     }
+    #middle{
+        color:black;
+    }
 }
 @media(max-width:600px){
     .item{
