@@ -145,18 +145,6 @@ async function charseries(start,end){
 }
 var gstartseries=-1;
 var gendseries=-1;
-setTimeout(function(){
-    console.log('kk',serieslength)
-    if(serieslength>3){
-        console.log('kkkk')
-        charseries(0,2);
-        gstartseries=0;
-        gendseries=2;
-    }
-    else{
-        charseries(0,serieslength-1);
-    }
-},600)
 function leftarrowseries(){
     console.log('leftftftftfttftf')
     gendseries=gstartseries-1;//ok
@@ -248,18 +236,6 @@ async function charcomics(start,end){
 }
 var gstartcomics=-1;
 var gendcomics=-1;
-setTimeout(function(){
-    console.log('kk',comicslength)
-    if(comicslength>3){
-        console.log('kkkk')
-        charcomics(0,2);
-        gstartcomics=0;
-        gendcomics=2;
-    }
-    else{
-        charcomics(0,comicslength-1);
-    }
-},600)
 function leftarrowcomics(){
     console.log('leftftftftfttftf')
     gendcomics=gstartcomics-1;//ok
@@ -343,10 +319,6 @@ async function charstories(start,end){
             var storyid=obj.id;
             console.log('storyid',storyid)
             getimage(storyid)
-            //console.log('ccccccc',c)
-            // setTimeout(function(){
-            //     //console.log('c',c)
-            // },1000)
         }
         setTimeout(function(){
              //console.log('iii',storiestitles)
@@ -373,23 +345,11 @@ async function charstories(start,end){
             title[i].innerHTML=`${storiestitles[i]}`;
         }
          
-        },600)
+        },3000)
     })
 }
 var gstartstories=-1;
 var gendstories=-1;
-setTimeout(function(){
-    console.log('kk',storieslength)
-    if(storieslength>3){
-        console.log('kkkk')
-        charstories(0,2);
-        gstartstories=0;
-        gendstories=2;
-    }
-    else{
-        charstories(0,storieslength-1);
-    }
-},600)
 function leftarrowstories(){
     console.log('leftftftftfttftf')
     gendstories=gstartstories-1;//ok
@@ -408,3 +368,51 @@ function rightarrowstories(){
     charstories(gstartstories,gendstories);
 }//ok
 //done
+setInterval(function(){
+    if(char==-1){
+        console.log('abhi tak ni aaya char');
+    }
+    else if(char==1){
+        console.log('kamm hogya')
+    }
+    else{
+        //stories initial call
+        console.log('kk',storieslength)
+        if(storieslength>3){
+            console.log('kkkk')
+            charstories(0,2);
+            gstartstories=0;
+            gendstories=2;
+        }
+        else{
+            charstories(0,storieslength-1);
+        }
+        // series initial call
+        console.log('kk',serieslength)
+        if(serieslength>3){
+            console.log('kkkk')
+            charseries(0,2);
+            gstartseries=0;
+            gendseries=2;
+        }
+        else{
+            charseries(0,serieslength-1);
+        }
+        
+        //cpmics ka initial call
+        console.log('kk',comicslength)
+        if(comicslength>3){
+            console.log('kkkk')
+            charcomics(0,2);
+            gstartcomics=0;
+            gendcomics=2;
+        }
+        else{
+            charcomics(0,comicslength-1);
+        }
+        char=1;
+
+
+
+    }
+},1000)

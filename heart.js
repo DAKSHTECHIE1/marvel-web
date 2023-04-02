@@ -1,8 +1,13 @@
-var fav= JSON.parse(localStorage.fav);
+var fav=[];
+setTimeout(function(){
+    fav= JSON.parse(localStorage.fav);
+    console.log('aagya fav')
+},1000);
+
 async function heartt(str,len){
     var icon=document.getElementsByClassName('heart');
     // console.log(icon.length)
-   // console.log('icon',icon);
+// console.log('icon',icon);
     if(str=='init'){
         //ok
     }
@@ -13,10 +18,10 @@ async function heartt(str,len){
         }
         icon=iconer;
     }
-   // console.log('iconer',icon)
+// console.log('iconer',icon)
     for(obj of icon){
-       // console.log('clickerrr')
-       // console.log(obj.getAttribute('data-lol'))
+    // console.log('clickerrr')
+    // console.log(obj.getAttribute('data-lol'))
         obj.addEventListener('click',function(event){
             console.log('clickeddd');
             var id=event.target.id;
@@ -50,7 +55,7 @@ async function heartt(str,len){
                     fav.push(id);
                     console.log('fav',fav)
                     // console.log('favvv',fav)
-                  
+                
                     //remove from fav
                     abc(fav); 
                     break;
@@ -71,7 +76,7 @@ async function heartt(str,len){
                     // console.log('favvv',fav)
                 }
             }
-          
+        
         })
     }
 }
