@@ -35,7 +35,7 @@ async function initiallist(){
         imgpath.push(obj.thumbnail.path+'/standard_medium.jpg');
         charid.push(obj.id);
         // console.log('charid',charid);
-        list=document.getElementById('list');
+        var list=document.getElementById('list');
         var item=document.createElement('div')
         item.setAttribute('class','item');
         item.setAttribute('id',`${obj.id}`)
@@ -183,6 +183,13 @@ async function single(){
     })
 }
 // single();
+var searcher=document.getElementById('search-list');
 document.querySelector("#name").addEventListener("input", function(event){
+    if(searcher.style.display=='none'){
+        searcher.style.display='block';
+    }
     searchlist(event);
 });
+document.addEventListener('click',function(){
+    searcher.style.display='none'
+})
